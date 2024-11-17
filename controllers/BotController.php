@@ -135,6 +135,7 @@ class BotController extends BaseTelegramController
                 ],
             ],
         ]);
+
         if (TelegramRequestHelper::isCallbackQuery()) {
             $this->tg->api->editMessageText([
                 'chat_id' => $this->chatId,

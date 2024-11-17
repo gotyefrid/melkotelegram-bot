@@ -19,6 +19,7 @@ class TelegramErrorHandler extends AbstractErrorHandler
 
         $text = 'Вызвано исключение: ' . get_class($throwable);
         $text .= PHP_EOL . $throwable->getMessage();
+        $text .= PHP_EOL . $throwable->getFile() . ":" . $throwable->getLine();
 
         $tg = App::get()->getTg();
         $chatId = $tg->message->getChat()->getId();
