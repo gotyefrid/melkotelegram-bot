@@ -2,6 +2,8 @@
 
 namespace core;
 
+use src\models\TelegramBot;
+use Telegram\Bot\Api;
 
 class AppConfig
 {
@@ -24,17 +26,20 @@ class AppConfig
      * @var \PDO
      */
     public $db;
+    public TelegramBot $tgbot;
 
     public function __construct(
         Router $router,
         ErrorHandler $errorHandler,
         Request $request,
-        \PDO $db
+        \PDO $db,
+        TelegramBot $tgbot
     )
     {
         $this->router = $router;
         $this->errorHandler = $errorHandler;
         $this->request = $request;
         $this->db = $db;
+        $this->tgbot = $tgbot;
     }
 }

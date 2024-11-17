@@ -2,6 +2,8 @@
 
 namespace core;
 
+use src\models\TelegramBot;
+
 class Application
 {
     public static $appPath = __DIR__;
@@ -18,12 +20,17 @@ class Application
 
     public function __construct()
     {
+        if (!is_dir(dirname(self::$dbPath))) {
+            mkdir(dirname(self::$dbPath), 0777, true);
+        }
+
         $request = new Request();
         self::$app = new AppConfig(
             new Router($request),
             new ErrorHandler(),
             $request,
-            new \PDO('sqlite:' . self::$dbPath)
+            new \PDO('sqlite:' . self::$dbPath),
+            new TelegramBot(),
         );
     }
 

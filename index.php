@@ -6,5 +6,4 @@ require __DIR__ . '/vendor/autoload.php';
 use core\Application;
 
 $app = new Application();
-
 $app->run();
