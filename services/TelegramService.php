@@ -10,7 +10,7 @@ class TelegramService
     public $message = null;
 
     public $callbackQuery = null;
-    public const TOKEN = '7550356332:AAGA_HB1Mvt5hJbxB4iS5d-jam-OJwdX0-I';
+    public const TOKEN = '7798296458:AAEaPMJpQslgAxGoQ5fgdzkGq1RgFJRcw-g';
     public ?Api $api = null;
 
     public function __construct()

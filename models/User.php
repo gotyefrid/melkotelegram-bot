@@ -12,20 +12,14 @@ class User extends Model
      */
     public $id;
 
-    /**
-     * @var string
-     */
-    public string $username = '';
+    public string $username;
 
-    /**
-     * @var string
-     */
-    public string $password = '';
+    public int $chat_id;
 
     public array $attributes = [
         'id',
         'username',
-        'password',
+        'chat_id',
     ];
 
     public static function tableName(): string
@@ -33,55 +27,9 @@ class User extends Model
         return 'users';
     }
 
-    /**
-     * @param string $username
-     *
-     * @return User|null
-     */
-    public static function findByUsername(string $username): ?User
-    {
-        return static::findByCondition('username', $username)[0] ?? null;
-    }
-
     public function validate(): bool
     {
-        if (!$this->password) {
-            $this->errors['password'] = 'Необходимо заполнить пароль';
-        }
-
-        if ($this->id) {
-            // Редактирование
-            $exists = static::find('SELECT * FROM users WHERE username = :name AND id != :id', [
-                'name' => $this->username,
-                'id' => $this->id
-            ]);
-
-            if ($exists) {
-                $this->errors['username'] = 'Такой пользователь уже существует';
-            }
-        } else {
-            if (self::findByUsername($this->username)) {
-                $this->errors['username'] = 'Такой пользователь уже существует';
-            }
-        }
-
-        if (!$this->username) {
-            $this->errors['username'] = 'Необходимо заполнить имя пользователя';
-        }
-
-        if ($this->password) {
-            if (strlen($this->password) < 3) {
-                $this->errors['password'] = 'Минимум 3 символа';
-            }
-        }
-
-        return empty($this->errors);
-    }
-
-    public function save(bool $runValidation = true): bool
-    {
-        $this->password = password_hash($this->password, PASSWORD_DEFAULT);
-        return parent::save($runValidation);
+        return true;
     }
 
     /**
@@ -93,5 +41,19 @@ class User extends Model
     public static function find(string $sql, array $params = []): array
     {
         return parent::find($sql, $params);
+    }
+
+    /**
+     * @param string $sql
+     * @param array $params
+     *
+     * @return User|null
+     */
+    public static function findOne(string $sql, array $params = []): ?static
+    {
+        /** @var User $user */
+        $user = parent::find($sql, $params)[0] ?? null;
+
+        return  $user;
     }
 }

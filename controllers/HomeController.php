@@ -31,8 +31,6 @@ class HomeController extends BaseController
         $telegram->setMyCommands([
             'commands' => [
                 ['command' => 'start', 'description' => 'Начало работы с ботом'],
-                ['command' => 'set_name', 'description' => 'Команда 1'],
-                ['command' => 'test__action', 'description' => 'Команда 2']
             ],
         ]);
     }
