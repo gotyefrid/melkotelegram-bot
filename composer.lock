@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e0b891c9cc1602b25b91db2ca1bcbb6c",
+    "content-hash": "6c5f2643b36cef08fe09a8e0d9d0b525",
     "packages": [
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -165,6 +165,46 @@
                 }
             ],
             "time": "2024-02-18T20:23:39+00:00"
+        },
+        {
+            "name": "gotyefrid/melkoframework-core",
+            "version": "v0.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gotyefrid/melkoframework-core.git",
+                "reference": "24ea99f528f2a2a2db7b6f2c15a5df3566356bc9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gotyefrid/melkoframework-core/zipball/24ea99f528f2a2a2db7b6f2c15a5df3566356bc9",
+                "reference": "24ea99f528f2a2a2db7b6f2c15a5df3566356bc9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Gotyefrid\\MelkoframeworkCore\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "MeL",
+                    "email": "gotye.f@yandex.ru"
+                }
+            ],
+            "description": "Mini framework with a basic architecture that can be run on any PHP hosting",
+            "support": {
+                "issues": "https://github.com/gotyefrid/melkoframework-core/issues",
+                "source": "https://github.com/gotyefrid/melkoframework-core/tree/v0.0.3"
+            },
+            "time": "2024-11-16T20:19:15+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

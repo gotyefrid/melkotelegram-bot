@@ -8,6 +8,7 @@
     },
   "require": {
     "ext-pdo": "*",
-        "irazasyed/telegram-bot-sdk": "^3.14"
+        "irazasyed/telegram-bot-sdk": "^3.14",
+        "gotyefrid/melkoframework-core": "^0.0.3"
   }
 }
