@@ -1,10 +1,10 @@
 <?php /** @noinspection PhpUnused */
 declare(strict_types=1);
 
-namespace melkoframework\controllers;
+namespace tg\controllers;
 
 use Gotyefrid\MelkoframeworkCore\Controller;
-use melkoframework\services\AuthService;
+use tg\services\AuthService;
 
 class BaseController extends Controller
 {

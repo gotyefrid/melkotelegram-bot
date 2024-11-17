@@ -1,14 +1,14 @@
 {
-    "name": "gotyefrid/melkoframework-php",
-    "autoload": {
-        "psr-4": {
-            "src\\": "src/",
-            "core\\": "core/"
-        }
-    },
+  "name": "test/tg",
+  "autoload": {
+    "psr-4": {
+      "tg\\": "./"
+    }
+  },
   "require": {
+    "php": ">=8.3",
     "ext-pdo": "*",
-        "irazasyed/telegram-bot-sdk": "^3.14",
-        "gotyefrid/melkoframework-core": "^0.0.3"
+    "irazasyed/telegram-bot-sdk": "^3.14",
+    "gotyefrid/melkoframework-core": ">0.0.3"
   }
 }

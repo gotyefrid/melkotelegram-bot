@@ -1,7 +1,7 @@
 <?php /** @noinspection PhpUnused */
 declare(strict_types=1);
 
-namespace melkoframework\controllers;
+namespace tg\controllers;
 
 use Gotyefrid\MelkoframeworkCore\exceptions\BadRequestException;
 use Gotyefrid\MelkoframeworkCore\exceptions\NotFoundException;
